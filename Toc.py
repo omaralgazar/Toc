@@ -168,7 +168,7 @@ def add_dead_state(dfa):
     return dfa
 
 
-def draw_dfa_with_arrows_and_accept(dfa):
+def draw_dfa(dfa):
     G = nx.DiGraph()
     state_name_map = {i: f"q{i}" for i in range(len(dfa.states))}
 
@@ -271,7 +271,7 @@ def draw_dfa_with_arrows_and_accept(dfa):
     plt.show()
 
 
-def print_tm_from_dfa(dfa):
+def tm_from_dfa(dfa):
     print("\nTuring Machine from DFA:")
     print("=" * 50)
 
@@ -326,5 +326,5 @@ if __name__ == "__main__":
     nfa = regex_to_nfa(regex)
     dfa = nfa_to_dfa(nfa)
     dfa = add_dead_state(dfa)
-    draw_dfa_with_arrows_and_accept(dfa)
-    print_tm_from_dfa(dfa)
+    draw_dfa(dfa)
+    tm_from_dfa(dfa)
