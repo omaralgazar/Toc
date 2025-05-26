@@ -252,7 +252,7 @@ def draw_dfa(dfa):
             ax.add_patch(circle)
 
     ax.set_aspect('equal')
-    plt.title("DFA with Dead State", fontsize=16, weight="bold")
+    plt.title("DFA", fontsize=16, weight="bold")
 
     legend_elements = [
         plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='lightblue',
@@ -310,10 +310,7 @@ def tm_from_dfa(dfa):
 
             print(f"δ(q{i}, #) = (q{i}, N, L) ")
 
-    print()
-    print("Final States:")
-    print("qAccept: Accepting (Halting) state")
-    print("qReject: Rejecting (Halting) state")
+
     if dfa.dead_state is not None:
         print(f"q{dfa.dead_state}: Dead state (trap state) - all undefined transitions lead here")
 
